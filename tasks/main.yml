@@ -1,0 +1,20 @@
+---
+# tasks file for polyglot.ansible-tomcat
+
+  - name: installing java
+    include_role: name=java
+
+  - name: getting tar file
+    include: "{{ installation_method }}.yml"
+  
+  - name: tomcatusers
+    template: src=tomcat-users.xml.j2 dest=/opt/tomcat/{{ tomcat_tar }}/conf/tomcat-users.xml
+    notify: restart tomcat
+
+  - name: context
+    template: src=context.xml.j2 dest=/opt/tomcat/{{ tomcat_tar }}/webapps/manager/META-INF/context.xml
+    notify: restart tomcat
+
+#  - name: stopping firewalls
+#    service: name=firewalld state=stopped  
+

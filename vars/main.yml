@@ -1,0 +1,11 @@
+---
+# vars file for polyglot.ansible-tomcat
+
+#tomcat:
+username: tomcat
+password: 1234
+
+tomcat_url: http://apache.mirrors.ionfish.org/tomcat/tomcat-{{ tomcat_major }}/{{ tomcat_version }}/bin/{{ tomcat_tar }}.tar.gz 
+tomcat_major: 8
+tomcat_version: v8.0.50
+tomcat_tar: apache-tomcat-8.0.50

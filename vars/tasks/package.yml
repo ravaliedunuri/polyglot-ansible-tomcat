@@ -1,0 +1,5 @@
+---
+# for package
+
+- name: installing tomcat
+  package: name=tomcat state=present
